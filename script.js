@@ -62,8 +62,12 @@ function playRound(humanChoice, computerChoice, scores) {
     }
 
 // make case insensitive
-    const human = humanChoice.toLowerCase();
+    let human = humanChoice.toLowerCase();
     const computer = computerChoice.toLowerCase();
+
+    if (human === "r") human = "rock";
+    if (human === "p") human = "paper";
+    if (human === "s") human = "scissors";
 
 // if humanChoice Rock - computerChoice Paper - computer wins 
     if (human === "rock" && computer === "paper") {
