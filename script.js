@@ -65,6 +65,7 @@ function playRound(humanChoice, computerChoice, scores) {
     let human = humanChoice.toLowerCase();
     const computer = computerChoice.toLowerCase();
 
+// add the ability to type one letter for each choice
     if (human === "r") human = "rock";
     if (human === "p") human = "paper";
     if (human === "s") human = "scissors";
@@ -113,25 +114,34 @@ function playRound(humanChoice, computerChoice, scores) {
 
             // *** MAIN GAME LOOP ***
 
+// add function for overall game
 function playGame() {
 
+//initialize a score object
     let scores = { human: 0, computer: 0 };
 
+// add a loop that repeats while scores below 5
     while (scores.human < 5 && scores.computer <5) {
         
+// save human answer in a constant variable
         const humanSelection = getHumanChoice();
+// save computer answer in a constant variable 
         const computerSelection = getComputerChoice();
 
+// pass both answers and scores object into playRound then print result to console
         console.log(playRound(humanSelection, computerSelection, scores));
-
+// print freshly updated scores to console
         console.log(`Score -> You: ${scores.human} | Computer: ${scores.computer}`);
     }
 
+// check if human has reached 5 points and if so show the alert
     if (scores.human === 5 ) {
     alert(`You win! You(${scores.human}) vs Computer(${scores.computer})`);
     }
+// check if computer has reached 5 points and if so show the alert
     else if (scores.computer === 5) {
     alert(`You lose! You(${scores.human}) vs Computer(${scores.computer})`);   
     }
 }
+// execute the playGame function to start running the game
 playGame();
