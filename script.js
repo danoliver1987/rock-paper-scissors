@@ -30,12 +30,11 @@ function getComputerChoice(Rock, Paper, Scissors) {
 function getHumanChoice() {
 
 // prompt human to make a choice
-
-   let humanChoice = prompt("Make your choice");
-   const choiceLower = humanChoice?.toLowerCase(); 
+    let humanChoice = prompt("Make your choice");
+// check for value first (?) & convert any user input to lower case
+    const choiceLower = humanChoice?.toLowerCase(); 
 
 // return alert based on choice
-
     if (choiceLower === "rock") {
         alert("You chose Rock!");
     }
@@ -51,8 +50,7 @@ function getHumanChoice() {
 // return the users input
     return humanChoice;
 }
-
-            // *** KEEP TRACK OF THE SCORE ***
+          // *** KEEP TRACK OF THE SCORE ***
 
     let humanScore = 0;
     let computerScore = 0;
@@ -60,7 +58,7 @@ function getHumanChoice() {
             // *** LOGIC FOR A SINGLE ROUND ***
 
 // declare function for a single round
-function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice, computerChoice, scores) {
 
 // crash protection
     if (!humanChoice || !computerChoice) {
@@ -108,9 +106,29 @@ function playRound(humanChoice, computerChoice) {
         return "It's a tie! Try again.";
     }
 }
-    
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
 
-console.log(playRound(humanSelection, computerSelection));
-console.log(`Score -> You: ${humanScore} | Computer: ${computerScore}`);
+            // *** MAIN GAME LOOP ***
+
+function playGame() {
+
+    let scores = { human: 0, computer: 0 };
+
+    while (scores.human < 5 && scores.computer <5) {
+        
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        console.log(playRound(humanSelection, computerSelection, scores));
+
+        console.log(`Score -> You: ${scores.human} | Computer: ${scores.computer}`);
+    }
+
+    if (humanScore !==5 && computerScore !== 5) {
+        playRound(); 
+    }   else {
+       return("Game over!=> You(" + humanScore + ") vs Computer(" + computerScore + ")");
+}
+
+    alert(`Game over!=> You(${scores.human}) vs Computer(${scores.computer})`);
+}
+playGame();
