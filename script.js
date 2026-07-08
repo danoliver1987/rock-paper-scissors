@@ -71,34 +71,34 @@ function playRound(humanChoice, computerChoice, scores) {
 
 // if humanChoice Rock - computerChoice Paper - computer wins 
     if (human === "rock" && computer === "paper") {
-        computerScore ++;
+        scores.computer ++;
         return "Computer wins! Paper beats Rock.";
     }
 // if humanChoice Rock - computerChoice Scissors - human wins
     else if (human === "rock" && computer === "scissors") {
-        humanScore ++;
+        scores.human ++;
         return "You win! Rock beats Scissors."
 }
 
 // if humanChoice Paper - computerChoice Rock - human wins 
     else if (human === "paper" && computer === "rock") {
-        humanScore ++;
+        scores.human ++;
         return "You win! Paper beats Rock."
 }
 // if humanChoice Paper - computerChoice Scissors - computer wins
     else if (human === "paper" && computer === "scissors") {
-        computerScore ++;
+        scores.computer ++;
         return "Computer wins! Scissors beats Paper."
 }
 
 // if humanChoice Scissors - computerChoice Paper - human wins 
     else if (human === "scissors" && computer === "paper") {
-        humanScore ++;
+        scores.human ++;
         return "You win! Scissors beats Paper."
 }
 // if humanChoice Scissors - computerChoice Rock - computer wins
     else if (human === "scissors" && computer === "rock") {
-        computerScore ++;
+        scores.computer ++;
         return "Computer wins! Rock beats Scissors."
 }
 // if humanChoice & computerChoice the same
@@ -129,6 +129,6 @@ function playGame() {
        return("Game over!=> You(" + humanScore + ") vs Computer(" + computerScore + ")");
 }
 
-    alert(`Game over!=> You(${scores.human}) vs Computer(${scores.computer})`);
+    alert(`Game over! You(${scores.human}) vs Computer(${scores.computer})`);
 }
 playGame();
