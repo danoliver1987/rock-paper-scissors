@@ -135,10 +135,14 @@ function playGame() {
     }
 
 // check if human has reached 5 points and if so show the alert
+// template literal used here to cleanly mix text with variable 
+// values inside a single string. Avoids string concatenation
     if (scores.human === 5 ) {
     alert(`You win! You(${scores.human}) vs Computer(${scores.computer})`);
     }
 // check if computer has reached 5 points and if so show the alert
+// template literal used here to cleanly mix text with variable 
+// values inside a single string. Avoids string concatenation
     else if (scores.computer === 5) {
     alert(`You lose! You(${scores.human}) vs Computer(${scores.computer})`);   
     }
