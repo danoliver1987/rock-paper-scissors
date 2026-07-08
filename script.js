@@ -50,10 +50,6 @@ function getHumanChoice() {
 // return the users input
     return humanChoice;
 }
-          // *** KEEP TRACK OF THE SCORE ***
-
-    let humanScore = 0;
-    let computerScore = 0;
 
             // *** LOGIC FOR A SINGLE ROUND ***
 
@@ -100,10 +96,14 @@ function playRound(humanChoice, computerChoice, scores) {
     else if (human === "scissors" && computer === "rock") {
         scores.computer ++;
         return "Computer wins! Rock beats Scissors."
-}
-// if humanChoice & computerChoice the same
+    }
+// if human and computer choose the same option 
+    else if (human === computer) {
+        return `It's a tie! Both chose ${humanChoice}. Try again.`;
+    }
+// invalid choice
     else {
-        return "It's a tie! Try again.";
+        return `Invalid choice! You typed "${humanChoice}". This round doesn't count.`;
     }
 }
 
@@ -123,12 +123,11 @@ function playGame() {
         console.log(`Score -> You: ${scores.human} | Computer: ${scores.computer}`);
     }
 
-    if (humanScore !==5 && computerScore !== 5) {
-        playRound(); 
-    }   else {
-       return("Game over!=> You(" + humanScore + ") vs Computer(" + computerScore + ")");
-}
-
-    alert(`Game over! You(${scores.human}) vs Computer(${scores.computer})`);
+    if (scores.human === 5 ) {
+    alert(`You win! You(${scores.human}) vs Computer(${scores.computer})`);
+    }
+    else if (scores.computer === 5) {
+    alert(`You lose! You(${scores.human}) vs Computer(${scores.computer})`);   
+    }
 }
 playGame();
