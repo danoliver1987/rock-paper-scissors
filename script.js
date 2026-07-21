@@ -121,7 +121,7 @@ function playGame() {
     let scores = { human: 0, computer: 0 };
 
 // add a loop that repeats while scores below 5
-    while (scores.human < 5 && scores.computer <5) {
+    //while (scores.human < 5 && scores.computer <5) {
         
 // save human answer in a constant variable
         const humanSelection = getHumanChoice();
@@ -137,15 +137,15 @@ function playGame() {
 // check if human has reached 5 points and if so show the alert
 // template literal used here to cleanly mix text with variable 
 // values inside a single string. Avoids string concatenation
-    if (scores.human === 5 ) {
-    alert(`You win! You(${scores.human}) vs Computer(${scores.computer})`);
-    }
+    //if (scores.human === 5 ) {
+    //alert(`You win! You(${scores.human}) vs Computer(${scores.computer})`);
+    //}
 // check if computer has reached 5 points and if so show the alert
 // template literal used here to cleanly mix text with variable 
 // values inside a single string. Avoids string concatenation
-    else if (scores.computer === 5) {
-    alert(`You lose! You(${scores.human}) vs Computer(${scores.computer})`);   
-    }
-}
+    //else if (scores.computer === 5) {
+    //alert(`You lose! You(${scores.human}) vs Computer(${scores.computer})`);   
+    //}
+//}
 // execute the playGame function to start running the game
 playGame();
