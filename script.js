@@ -115,21 +115,21 @@ function playRound(humanChoice, computerChoice, scores) {
             // *** MAIN GAME LOOP ***
 
 // add function for overall game
-function playGame() {
+//function playGame() {
 
 // add a loop that repeats while scores below 5
     //while (scores.human < 5 && scores.computer <5) {
         
 // save human answer in a constant variable
-        const humanSelection = getHumanChoice();
+        //const humanSelection = getHumanChoice();
 // save computer answer in a constant variable 
-        const computerSelection = getComputerChoice();
+        //const computerSelection = getComputerChoice();
 
 // pass both answers and scores object into playRound then print result to console
-        console.log(playRound(humanSelection, computerSelection, scores));
+        //console.log(playRound(humanSelection, computerSelection, scores));
 // print freshly updated scores to console
-        console.log(`Score -> You: ${scores.human} | Computer: ${scores.computer}`);
-    }
+        //console.log(`Score -> You: ${scores.human} | Computer: ${scores.computer}`);
+    //}
 
 // check if human has reached 5 points and if so show the alert
 // template literal used here to cleanly mix text with variable 
