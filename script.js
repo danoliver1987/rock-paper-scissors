@@ -27,29 +27,29 @@ function getComputerChoice(Rock, Paper, Scissors) {
             // *** HUMAN CHOICE ***
 
 // declare function for human choice
-function getHumanChoice() {
+//function getHumanChoice() {
 
 // prompt human to make a choice
-    let humanChoice = prompt("Make your choice");
+    //let humanChoice = prompt("Make your choice");
 // check for value first (?) & convert any user input to lower case
-    const choiceLower = humanChoice?.toLowerCase(); 
+    //const choiceLower = humanChoice?.toLowerCase(); 
 
 // return alert based on choice
-    if (choiceLower === "rock") {
-        alert("You chose Rock!");
-    }
+    //if (choiceLower === "rock") {
+        //alert("You chose Rock!");
+    //}
 
-    else if (choiceLower === "paper") {
-        alert("You chose Paper!");
-    }
+    //else if (choiceLower === "paper") {
+        //alert("You chose Paper!");
+    //}
 
-    else if (choiceLower === "scissors") {
-        alert("You chose Scissors!");
-    }
+    //else if (choiceLower === "scissors") {
+        //alert("You chose Scissors!");
+    //}
 
 // return the users input
-    return humanChoice;
-}
+    //return humanChoice;
+//}
 
             // *** LOGIC FOR A SINGLE ROUND ***
 
