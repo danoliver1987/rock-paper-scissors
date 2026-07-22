@@ -1,7 +1,7 @@
             // *** COMPUTER CHOICE ***
 
 // declare function for computer choice
-function getComputerChoice(Rock, Paper, Scissors) {
+function getComputerChoice() {
 
     // randomly pick either 1, 2 or 3
     let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -153,7 +153,6 @@ const scoreDiv = document.querySelector("#currentScore");
 
 const rockBtn = document.querySelector("#rock-btn");
     rockBtn.addEventListener("click", () => {
-    alert("You chose Rock!");
     let humanChoice = "rock";
     let computerChoice = getComputerChoice();
     let round = playRound(humanChoice, computerChoice, scores);
@@ -163,7 +162,6 @@ const rockBtn = document.querySelector("#rock-btn");
 
 const paperBtn = document.querySelector("#paper-btn");
     paperBtn.addEventListener("click", () => {
-    alert("You chose Paper!");
     let humanChoice = "paper";
     let computerChoice = getComputerChoice();
     let round = playRound(humanChoice, computerChoice, scores);
@@ -175,8 +173,6 @@ const paperBtn = document.querySelector("#paper-btn");
 const scissorsBtn = document.querySelector("#scissors-btn");
 // listen for a click on the Scissors button
     scissorsBtn.addEventListener("click", () => {
-// temporary visual feedback that the click registered
-    alert("You chose Scissors!");
 // human's choice is fixed, since this is the Scissors button specifically
     let humanChoice = "scissors";
 // get a fresh random choice from the computer for this round
