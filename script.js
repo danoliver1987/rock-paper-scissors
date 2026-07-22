@@ -117,9 +117,6 @@ function playRound(humanChoice, computerChoice, scores) {
 // add function for overall game
 function playGame() {
 
-//initialize a score object
-    let scores = { human: 0, computer: 0 };
-
 // add a loop that repeats while scores below 5
     //while (scores.human < 5 && scores.computer <5) {
         
@@ -147,5 +144,37 @@ function playGame() {
     //alert(`You lose! You(${scores.human}) vs Computer(${scores.computer})`);   
     //}
 //}
-// execute the playGame function to start running the game
-playGame();
+
+//initialize a score object
+let scores = { human: 0, computer: 0 };
+
+
+const rockBtn = document.querySelector("#rock-btn");
+    rockBtn.addEventListener("click", () => {
+    alert("You chose Rock!");
+    let humanChoice = "rock";
+    let computerChoice = getComputerChoice();
+    let round = playRound(humanChoice, computerChoice, scores);
+    console.log(round);
+    console.log(scores.human, scores.computer);
+  });
+
+const paperBtn = document.querySelector("#paper-btn");
+    paperBtn.addEventListener("click", () => {
+    alert("You chose Paper!");
+    let humanChoice = "paper";
+    let computerChoice = getComputerChoice();
+    let round = playRound(humanChoice, computerChoice, scores);
+    console.log(round);
+    console.log(scores.human, scores.computer);
+});
+
+const scissorsBtn = document.querySelector("#scissors-btn");
+    scissorsBtn.addEventListener("click", () => {
+    alert("You chose Scissors!");
+    let humanChoice = "scissors";
+    let computerChoice = getComputerChoice();
+    let round = playRound(humanChoice, computerChoice, scores);
+    console.log(round);
+    console.log(scores.human, scores.computer);
+});
