@@ -169,12 +169,20 @@ const paperBtn = document.querySelector("#paper-btn");
     console.log(scores.human, scores.computer);
 });
 
+// select the existing Scissors button from the HTML
 const scissorsBtn = document.querySelector("#scissors-btn");
+// listen for a click on the Scissors button
     scissorsBtn.addEventListener("click", () => {
+// temporary visual feedback that the click registered
     alert("You chose Scissors!");
+// human's choice is fixed, since this is the Scissors button specifically
     let humanChoice = "scissors";
+// get a fresh random choice from the computer for this round
     let computerChoice = getComputerChoice();
+// play the round: compares choices, updates the shared `scores` object,
+  // and returns a result message string
     let round = playRound(humanChoice, computerChoice, scores);
+// log the round result and the current running score
     console.log(round);
     console.log(scores.human, scores.computer);
 });
