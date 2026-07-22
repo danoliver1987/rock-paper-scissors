@@ -147,6 +147,7 @@ function playGame() {
 
 //initialize a score object
 let scores = { human: 0, computer: 0 };
+const resultDiv = document.querySelector("#results");
 
 
 const rockBtn = document.querySelector("#rock-btn");
@@ -165,7 +166,7 @@ const paperBtn = document.querySelector("#paper-btn");
     let humanChoice = "paper";
     let computerChoice = getComputerChoice();
     let round = playRound(humanChoice, computerChoice, scores);
-    console.log(round);
+    resultDiv.textContent = round;
     console.log(scores.human, scores.computer);
 });
 
@@ -186,3 +187,4 @@ const scissorsBtn = document.querySelector("#scissors-btn");
     console.log(round);
     console.log(scores.human, scores.computer);
 });
+
