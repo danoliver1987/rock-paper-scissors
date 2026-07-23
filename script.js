@@ -83,30 +83,42 @@ const scoreDiv = document.querySelector("#currentScore");
 
             // *** BUTTON HANDLERS ***
 
-// Each handler follows the same pattern:
-// 1. If the game's already over (someone hit 5), show a message and stop.
-// 2. Otherwise, play a round using this button's fixed choice, then update
-//    the result and score on the page.
-// 3. Check if this round just won the game, and if so, show a winner message
-//    (overwriting the normal round result).
-
+// select the existing Rock button from the HTML
+// Paper and Scissors buttons follow this exact same pattern below
 const rockBtn = document.querySelector("#rock-btn");
+
+// listen for a click on the Rock button
 rockBtn.addEventListener("click", () => {
 
+    // if either side has already reached 5 points, the game is over -
+    // show a message and stop here, without playing another round
     if (scores.human === 5 || scores.computer === 5) {
         resultDiv.textContent = "Game is over!";
         return;
     }
 
+    // human's choice is fixed, since this is the Rock button specifically
     let humanChoice = "rock";
+
+    // get a fresh random choice from the computer for this round
     let computerChoice = getComputerChoice();
+
+    // play the round: compares choices, updates the shared `scores` object,
+    // and returns a message describing the outcome
     let round = playRound(humanChoice, computerChoice, scores);
+
+    // display the round result on the page
     resultDiv.textContent = round;
+
+    // display the updated running score on the page
     scoreDiv.textContent = `Human: ${scores.human} | Computer ${scores.computer}`;
 
+    // check whether this round just pushed the human to 5 points -
+    // if so, overwrite the round result with a winner announcement
     if (scores.human === 5) {
         resultDiv.textContent = `You win! You(${scores.human}) vs Computer(${scores.computer})`;
     }
+    // otherwise, check whether the computer just reached 5 points instead
     else if (scores.computer === 5) {
         resultDiv.textContent = `You lose! You(${scores.human}) vs Computer(${scores.computer})`;
     }
