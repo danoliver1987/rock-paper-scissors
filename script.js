@@ -66,9 +66,9 @@ function playRound(humanChoice, computerChoice, scores) {
     const computer = computerChoice.toLowerCase();
 
 // add the ability to type one letter for each choice
-    if (human === "r") human = "rock";
-    if (human === "p") human = "paper";
-    if (human === "s") human = "scissors";
+    //if (human === "r") human = "rock";
+    //if (human === "p") human = "paper";
+    //if (human === "s") human = "scissors";
 
 // if humanChoice Rock - computerChoice Paper - computer wins 
     if (human === "rock" && computer === "paper") {
@@ -153,26 +153,55 @@ const scoreDiv = document.querySelector("#currentScore");
 
 const rockBtn = document.querySelector("#rock-btn");
     rockBtn.addEventListener("click", () => {
+
+    if (scores.human === 5 || scores.computer === 5) {
+        resultDiv.textContent = "Game is over!";
+        return;
+ }
     let humanChoice = "rock";
     let computerChoice = getComputerChoice();
     let round = playRound(humanChoice, computerChoice, scores);
     resultDiv.textContent = round;
     scoreDiv.textContent = `Human: ${scores.human} | Computer ${scores.computer}`;
-  });
+  
+    if (scores.human === 5 ) {
+    resultDiv.textContent = (`You win! You(${scores.human}) vs Computer(${scores.computer})`);
+    }
+    else if (scores.computer === 5) {
+    resultDiv.textContent = (`You lose! You(${scores.human}) vs Computer(${scores.computer})`);   
+    }
+});
 
 const paperBtn = document.querySelector("#paper-btn");
     paperBtn.addEventListener("click", () => {
+
+    if (scores.human === 5 || scores.computer === 5) {
+        resultDiv.textContent = "Game is over!";
+        return;
+ }
     let humanChoice = "paper";
     let computerChoice = getComputerChoice();
     let round = playRound(humanChoice, computerChoice, scores);
     resultDiv.textContent = round;
     scoreDiv.textContent = `Human: ${scores.human} | Computer ${scores.computer}`;
+
+    if (scores.human === 5 ) {
+    resultDiv.textContent = (`You win! You(${scores.human}) vs Computer(${scores.computer})`);
+    }
+    else if (scores.computer === 5) {
+    resultDiv.textContent = (`You lose! You(${scores.human}) vs Computer(${scores.computer})`);   
+    }
 });
 
 // select the existing Scissors button from the HTML
 const scissorsBtn = document.querySelector("#scissors-btn");
 // listen for a click on the Scissors button
     scissorsBtn.addEventListener("click", () => {
+
+    if (scores.human === 5 || scores.computer === 5) {
+        resultDiv.textContent = "Game is over!";
+        return;
+    }
 // human's choice is fixed, since this is the Scissors button specifically
     let humanChoice = "scissors";
 // get a fresh random choice from the computer for this round
@@ -182,5 +211,11 @@ const scissorsBtn = document.querySelector("#scissors-btn");
     let round = playRound(humanChoice, computerChoice, scores);
     resultDiv.textContent = round;
     scoreDiv.textContent = `Human: ${scores.human} | Computer ${scores.computer}`;
-});
 
+    if (scores.human === 5 ) {
+    resultDiv.textContent = (`You win! You(${scores.human}) vs Computer(${scores.computer})`);
+    }
+    else if (scores.computer === 5) {
+    resultDiv.textContent = (`You lose! You(${scores.human}) vs Computer(${scores.computer})`);   
+    }
+});
